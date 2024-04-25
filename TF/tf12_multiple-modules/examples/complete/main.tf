@@ -9,6 +9,9 @@ resource "random_pet" "this" {
 resource "aws_kms_key" "objects" {
   description             = "KMS key is used to encrypt bucket objects"
   deletion_window_in_days = 7
+  tags = {
+    yor_trace = "4949b0a3-b375-46fc-9f1e-a476a8acf218"
+  }
 }
 
 resource "aws_iam_role" "this" {
@@ -27,6 +30,9 @@ resource "aws_iam_role" "this" {
   ]
 }
 EOF
+  tags = {
+    yor_trace = "647f1ccf-a8c0-4c37-8252-d8dd76c9e5dd"
+  }
 }
 
 data "aws_iam_policy_document" "bucket_policy" {
